@@ -1,36 +1,15 @@
-//
-// Created by ivan on 3/3/26.
-//
-
-#ifndef OOP_3_CIRCLE_H
-#define OOP_3_CIRCLE_H
+#pragma once
 
 #include <string>
-#include <cmath>
-
 #include "Figures.h"
 
-using std::string;
-
 class Circle : public Figure {
-    double *radius;
+private:
+    double* radius;                                  // Указатель на радиус
 
 public:
-    Circle(double radius) {
-        this->radius = new double(radius);
-    }
-
-    ~Circle() override {
-        delete this->radius;
-    }
-
-    double calc_area() override {
-        const double r = *this->radius;
-
-        return r * r * M_PI;
-    }
-
-    string to_string() override;
+    explicit Circle(double radius);                  // Конструктор
+    ~Circle() override;                              // Деструктор
+    double calc_area() const override;               // Площадь
+    std::string to_string() const override;          // JSON
 };
-
-#endif //OOP_3_CIRCLE_H

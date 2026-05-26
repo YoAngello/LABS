@@ -1,36 +1,16 @@
-//
-// Created by ivan on 3/3/26.
-//
-
-#ifndef OOP_3_RECTANGLE_H
-#define OOP_3_RECTANGLE_H
+#pragma once
 
 #include <string>
-
 #include "Figures.h"
 
-using std::string;
-
 class Rectangle : public Figure {
-    double *width;
-    double *height;
+protected:
+    double* width;                                   // Указатель на ширину
+    double* height;                                  // Указатель на высоту
 
 public:
-    Rectangle(double width, double height) {
-        this->width = new double(width);
-        this->height = new double(height);
-    }
-
-    ~Rectangle() override {
-        delete this->width;
-        delete this->height;
-    };
-
-    double calc_area() override {
-        return *width * *height;
-    };
-
-    string to_string() override;
+    Rectangle(double width, double height);          // Конструктор
+    ~Rectangle() override;                           // Деструктор
+    double calc_area() const override;               // Площадь
+    std::string to_string() const override;          // JSON
 };
-
-#endif //OOP_3_RECTANGLE_H

@@ -1,13 +1,10 @@
-#ifndef OOP_SQUARE_H
-#define OOP_SQUARE_H
+#pragma once
 
 #include "Rectangle.h"
 #include <string>
 
 class Square : public Rectangle {
 public:
-    explicit Square(double side);
-    std::string to_string() const override;
+    explicit Square(double side);                    // Конструктор
+    std::string to_string() const override;          // JSON
 };
-
-#endif

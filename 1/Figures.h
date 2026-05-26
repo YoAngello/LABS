@@ -1,21 +1,12 @@
-#ifndef OOP_3_FIGURES_H
-#define OOP_3_FIGURES_H
+#pragma once
 
 #include <string>
 
-using std::string;
-using std::stringstream;
-
 class Figure {
 public:
-    virtual ~Figure() = default;
-
-    virtual double calc_area() = 0;
-
-    virtual string to_string();
+    virtual ~Figure() = default;                    // Виртуальный деструктор
+    virtual double calc_area() const = 0;           // Вычисляет площадь
+    virtual std::string to_string() const = 0;      // JSON в строку
 };
 
-double calc_cylinder_volume(Figure *base, double height);
-
-
-#endif //OOP_3_FIGURES_H
+double calc_cylinder_volume(const Figure* base, double height);  // Объём цилиндра

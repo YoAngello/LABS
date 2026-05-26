@@ -1,10 +1,8 @@
-#ifndef OOP_TRIANGLE_H
-#define OOP_TRIANGLE_H
+#pragma once
 
 #include "Figures.h"
 #include <string>
 
-// Класс "Треугольник" (по трём сторонам, формула Герона)
 class Triangle : public Figure {
 private:
     double* side_a;
@@ -12,11 +10,8 @@ private:
     double* side_c;
 
 public:
-    Triangle(double a, double b, double c);
-    ~Triangle() override;
-
-    double calc_area() const override;
-    std::string to_string() const override;
+    Triangle(double a, double b, double c);          // Конструктор
+    ~Triangle() override;                            // Деструктор
+    double calc_area() const override;               // Площадь
+    std::string to_string() const override;          
 };
-
-#endif
